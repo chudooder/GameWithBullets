@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovementScript : MonoBehaviour {
+public class Player : MonoBehaviour {
 
 	const float speed = 30;
 	public Vector3 aimDirection;

@@ -43,7 +43,7 @@ GameObject:
   - 143: {fileID: 143000013448404894}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,10 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimDirection: {x: 0, y: 0, z: 0}
-  primaryGun: {fileID: 114000010469100612, guid: 6d01b9dab87648047ab0dc54a8b4a28e,
-    type: 2}
-  secondaryGun: {fileID: 114000010469100612, guid: 6d01b9dab87648047ab0dc54a8b4a28e,
-    type: 2}
+  primaryGun: {fileID: 0}
+  secondaryGun: {fileID: 0}
   playerId: 1
 --- !u!136 &136000011454248314
 CapsuleCollider:

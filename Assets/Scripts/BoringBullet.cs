@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BoringBullet : MonoBehaviour {
+public class BoringBullet : Bullet {
 
 	public float velocity;
 
@@ -16,8 +16,13 @@ public class BoringBullet : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collision) {
 		GameObject other = collision.gameObject;
-		if (other.CompareTag ("wall")) {
+		if (other.CompareTag ("Wall")) {
 			Destroy (gameObject);
+		} else if (other.CompareTag ("Player")) {
+			if (other.GetComponent<Player>().Equals(source)) {
+				Debug.Log ("self hit");
+				return;
+			}
 		}
 	}
 }

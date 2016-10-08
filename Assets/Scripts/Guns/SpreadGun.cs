@@ -5,9 +5,8 @@ using System.Collections;
 public class SpreadGun : Gun {
 
 	public float cooldown;
-	public Material[] bulletMaterial;
 	public BoringBullet bulletPrefab;
-	public int player;
+	public Player player;
 
 	public override void Cooldown(float deltaTime) {
 		cooldown = Mathf.Max(cooldown - deltaTime, 0f);
@@ -23,8 +22,8 @@ public class SpreadGun : Gun {
 			Quaternion.LookRotation(direction));
 		
 		bullet.velocity = 20;
-
-		bullet.GetComponent<MeshRenderer> ().materials = bulletMaterial;
+		bullet.GetComponent<MeshRenderer> ().materials = player.GetComponent<MeshRenderer> ().materials;
+		bullet.source = player;
 
 		cooldown = 0.25f;
 	}
