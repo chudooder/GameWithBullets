@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[CreateAssetMenu()]
 public class SpreadGun : Gun {
 
 	public float cooldown;
+	public Material[] bulletMaterial;
 	public BoringBullet bulletPrefab;
 	public int player;
 
@@ -22,8 +24,7 @@ public class SpreadGun : Gun {
 		
 		bullet.velocity = 20;
 
-		bullet.GetComponent<MeshRenderer> ().materials = 
-			transform.parent.gameObject.GetComponent<MeshRenderer>().materials;
+		bullet.GetComponent<MeshRenderer> ().materials = bulletMaterial;
 
 		cooldown = 0.25f;
 	}
