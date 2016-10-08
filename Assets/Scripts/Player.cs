@@ -5,8 +5,6 @@ public class Player : MonoBehaviour {
 
 	public const float speed = 15;
 	public Vector3 aimDirection;
-	public Gun primaryGun;
-	public Gun secondaryGun;
 	public int playerId;
 
 	// Use this for initialization
@@ -42,5 +40,13 @@ public class Player : MonoBehaviour {
 		if (Input.GetButton (playerId + "_Fire2")) {
 			secondaryGun.Fire (transform.position, transform.forward);
 		}
+	}
+
+	private Gun primaryGun{
+		get {return GetComponents<Gun> () [0]; }
+	}
+
+	private Gun secondaryGun{
+		get {return GetComponents<Gun> () [1]; }
 	}
 }
