@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	const float speed = 30;
+	public const float speed = 15;
 	public Vector3 aimDirection;
 	public Gun primaryGun;
 	public Gun secondaryGun;

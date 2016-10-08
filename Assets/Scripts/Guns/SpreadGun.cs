@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu()]
 public class SpreadGun : Gun {
 
 	public float cooldown;
 	public BoringBullet bulletPrefab;
-	public Player player;
 
 	public override void Cooldown(float deltaTime) {
 		cooldown = Mathf.Max(cooldown - deltaTime, 0f);
@@ -22,8 +20,8 @@ public class SpreadGun : Gun {
 			Quaternion.LookRotation(direction));
 		
 		bullet.velocity = 20;
-		bullet.GetComponent<MeshRenderer> ().materials = player.GetComponent<MeshRenderer> ().materials;
-		bullet.source = player;
+		bullet.GetComponent<MeshRenderer> ().materials = transform.parent.GetComponent<MeshRenderer> ().materials;
+		bullet.source = transform.parent.GetComponent<Player>();
 
 		cooldown = 0.25f;
 	}
