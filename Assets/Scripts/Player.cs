@@ -72,11 +72,11 @@ public class Player : MonoBehaviour {
 
 		// firing
 		if (Input.GetAxis (playerId + "_Fire1") > 0) {
-			primaryGun.Fire (transform.position, transform.forward);
+			primaryGun.TryFire (transform.position, transform.forward);
 		}
 
 		if (Input.GetButton (playerId + "_Fire2")) {
-			secondaryGun.Fire (transform.position, transform.forward);
+			secondaryGun.TryFire (transform.position, transform.forward);
 		}
 
 		// dash

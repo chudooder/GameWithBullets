@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject winBannerPrefab;
 	public Scorer scorer;
 	public static GameManager instance;
+	public float celebrationTime;
+	public bool celebrating;
 
 	// Use this for initialization
 	void Awake () {
@@ -20,6 +23,12 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (celebrating) {
+			celebrationTime -= Time.deltaTime;
+			if (celebrationTime < 0) {
+				SceneManager.LoadScene ("start");
+			}
+		}
 
 	}
 
@@ -30,5 +39,7 @@ public class GameManager : MonoBehaviour {
 
 		Camera.main.enabled = false;
 		p.GetComponentInChildren<Camera> ().enabled = true;
+		celebrationTime = 5.0f;
+		celebrating = true;
 	}
 }

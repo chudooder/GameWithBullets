@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class TagScorer : Scorer {
 
-	public const float MAX_TIME = 99.0f;
+	public const float MAX_TIME = 60.0f;
 
 	private Dictionary<Player, float> scores = new Dictionary<Player, float>();
 	public Player runner;
