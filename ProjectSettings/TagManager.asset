@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Hurtbox
+  - Gun
+  - Dasher
+  - UICanvas
   layers:
   - Default
   - TransparentFX
