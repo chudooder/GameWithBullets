@@ -851,6 +851,11 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 108000011177478762, guid: 4432995553087a14ab8d196872ca885c,
+        type: 2}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4432995553087a14ab8d196872ca885c, type: 2}
   m_IsPrefabParent: 0
@@ -918,7 +923,7 @@ MonoBehaviour:
   players:
   - {fileID: 672012518}
   - {fileID: 452160960}
-  maxTime: 0
+  maxTime: 60
 --- !u!1001 &970798733
 Prefab:
   m_ObjectHideFlags: 0

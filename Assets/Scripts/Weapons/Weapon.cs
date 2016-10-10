@@ -32,10 +32,15 @@ public abstract class Weapon : MonoBehaviour
 	public float Startup {
 		get { return MaxStartup != 0 ? startup / MaxStartup : 0; }
 	}
+	/* How much active is left on the weapon, normalized between 0 and 1 */
+	public float Active {
+		get { return MaxActive != 0 ? active / MaxActive: 0; }
+	}
 	/* How much cooldown is left on the weapon, normalized between 0 and 1 */
 	public float Cooldown {
 		get { return MaxCooldown != 0 ? cooldown / MaxCooldown: 0; }
 	}
+
 
 	public abstract string UIName { get; }
 	protected abstract float MaxStartup{ get; }

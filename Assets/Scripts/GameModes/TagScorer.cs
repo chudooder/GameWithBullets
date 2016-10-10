@@ -40,7 +40,7 @@ public class TagScorer : Scorer {
 		scores [player] = maxTime;
 	}
 
-	public override void PlayerSliced (Player src, Player target) {
+	public override void PlayerDashed (Player src, Player target) {
 		if (target == runner) {
 			runner = src;
 		}

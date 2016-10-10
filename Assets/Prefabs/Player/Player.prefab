@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialWeapons:
   - {fileID: 114000011692654696, guid: e7e5cce54b9f9d2418547afebb1aea7c, type: 2}
-  - {fileID: 114000011527485954, guid: 900b11723d9468e44becf1ab6c1f6242, type: 2}
+  - {fileID: 114000011900737250, guid: 56f6cb7d9e825a847a4fcd0c83cc5092, type: 2}
   - {fileID: 114000014165915336, guid: c9fb45147c286984792ac57f9349afed, type: 2}
 --- !u!114 &114000013478485502
 MonoBehaviour:

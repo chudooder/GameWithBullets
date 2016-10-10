@@ -42,8 +42,8 @@ public class PlayerStun : MonoBehaviour
 
 	private void unstun() {
 		this.totalStun = 0;
-		GetComponent<PlayerMovement> ().MoveLocked = true;
-		GetComponent<PlayerMovement> ().AimLocked = true;
+		GetComponent<PlayerMovement> ().MoveLocked = false;
+		GetComponent<PlayerMovement> ().AimLocked = false;
 	}
 
 	public void PushUnstunnable(){
