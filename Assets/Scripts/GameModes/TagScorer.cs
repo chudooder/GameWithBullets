@@ -4,11 +4,10 @@ using System.Collections.Generic;
 
 public class TagScorer : Scorer {
 
-	public const float MAX_TIME = 60.0f;
-
 	private Dictionary<Player, float> scores = new Dictionary<Player, float>();
 	public Player runner;
 	public Player[] players;
+	public float maxTime;
 
 	private bool gameOver;
 
@@ -38,7 +37,7 @@ public class TagScorer : Scorer {
 	}
 
 	public override void RegisterPlayer (Player player) {
-		scores [player] = MAX_TIME;
+		scores [player] = maxTime;
 	}
 
 	public override void PlayerSliced (Player src, Player target) {
