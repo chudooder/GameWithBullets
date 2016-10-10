@@ -7,7 +7,7 @@ public class PlayerStun : MonoBehaviour
 	public enum StackMode { None, Max, Add }
 	public float stun;
 	public float totalStun;
-	private volatile int unstunnable;
+	private int unstunnable;
 
 	void FixedUpdate() {
 		if (stun > 0) {
@@ -47,11 +47,11 @@ public class PlayerStun : MonoBehaviour
 	}
 
 	public void PushUnstunnable(){
-		Interlocked.Increment(ref unstunnable);
+		unstunnable++;
 	}
 
 	public void PopUnstunnable(){
-		Interlocked.Decrement (ref unstunnable);
+		unstunnable--;
 	}
 
 }

@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpreadGun : BulletGun
+public class SplitGun : BulletGun
 {
 	public override string UIName {
-		get { return "Spread Shot"; }
+		get { return "Split Shot"; }
 	}
 	protected override float MaxStartup {
 		get { return 0; }
@@ -13,12 +13,14 @@ public class SpreadGun : BulletGun
 		get { return 0; }
 	}
 	protected override float MaxCooldown {
-		get { return 0.3f; }
+		get { return 0.2f; }
 	}
 
 	protected override void Activate (){
 		for (int i = -1; i <= 1; i++) {
-			ShootBullet(localDirection: Quaternion.Euler(0, i * 15, 0));
+			this.ShootBullet (
+				localPosition: new Vector3(i * 1.2f, 0, 0)
+			);
 		}
 	}
 }

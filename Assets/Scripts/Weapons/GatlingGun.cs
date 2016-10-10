@@ -3,12 +3,11 @@ using System.Collections;
 
 public class GatlingGun : BulletGun
 {
-	public const int MAX_BULLETS = 25;
-	public const float SPEED = 20f;
+	public const int MAX_BULLETS = 25;	public const float SPEED = 20f;
 	private const float STUN = 0.6f;
 
 	public override string UIName {
-		get { return "Gatling Gun"; }
+		get { return "Gatling Cannon"; }
 	}
 	protected override float MaxStartup {
 		get { return 0.3f; }
@@ -29,10 +28,7 @@ public class GatlingGun : BulletGun
 	protected override void ActiveUpdate() {
 		if((float) bullets / MAX_BULLETS >= Active){
 			float angle = RandomFromDistribution.RandomNormalDistribution (0, 3.5f);
-			ShootBullet(
-				transform.position, 
-				Quaternion.Euler (0, angle, 0) * transform.forward * SPEED, 
-				STUN);
+			ShootBullet(localDirection: Quaternion.Euler (0, angle, 0));
 			bullets--;
 		}
 	}
