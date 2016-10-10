@@ -6,9 +6,10 @@ TagManager:
   tags:
   - Wall
   - Hurtbox
-  - Gun
-  - Dasher
   - UICanvas
+  - MainWeapon
+  - SubWeapon
+  - DashWeapon
   layers:
   - Default
   - TransparentFX

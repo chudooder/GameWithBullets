@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class WeaponUI : MonoBehaviour {
 
 	public PlayerWeapons weapons;
-	public int slot;
 	
 	// Update is called once per frame
 	void OnGUI () {
@@ -14,7 +13,7 @@ public class WeaponUI : MonoBehaviour {
 			return;
 		}
 
-		Weapon weapon = weapons.GetWeapon (slot);
+		Weapon weapon = weapons.GetWeapon (tag);
 
 		GetComponent<Text> ().text = weapon.UIName;
 		float cooldown = weapon.Cooldown;

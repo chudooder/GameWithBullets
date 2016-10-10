@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerWeapons : MonoBehaviour {
 	// Prefabs
-	public Weapon[] initialWeapons = new Weapon[3];
+	public NullWeapon nullWeapon;
+	public Weapon[] initialWeapons;
 
-	private Weapon[] weapons = new Weapon[3];
+	private Dictionary<string, Weapon> weapons = new Dictionary<string, Weapon>();
 
 	void Start() {
-		for (int i = 0; i < 3; i++) {
-			Equip (i, initialWeapons [i]);
+		foreach (Weapon prefab in initialWeapons) {
+			Equip (prefab);
 		}
 	}
 
@@ -17,25 +19,27 @@ public class PlayerWeapons : MonoBehaviour {
 		uint pid = GetComponent<Player>().playerId;
 
 		if (Input.GetAxis (pid + "_Fire1") > 0) {
-			weapons [0].Fire ();
+			GetWeapon("MainWeapon").Fire ();
 		}
 
 		if (Input.GetButton (pid + "_Fire2")) {
-			weapons [1].Fire ();
+			GetWeapon("SubWeapon").Fire ();
 		}
 
-		// dash
 		if (Input.GetButtonDown (pid + "_Dash")) {
-			weapons [2].Fire ();
+			GetWeapon("DashWeapon").Fire ();
 		}
 	}
 
-	public void Equip(int slot, Weapon prefab){
-		weapons [slot] = Instantiate (prefab);
-		weapons [slot].transform.SetParent (transform, false);
+	public void Equip(Weapon prefab){
+		weapons [prefab.tag] = Instantiate (prefab);
+		weapons [prefab.tag].transform.SetParent (transform, false);
 	}
 
-	public Weapon GetWeapon(int slot) {
-		return weapons [slot];
+	public Weapon GetWeapon(string tag) {
+		if (weapons.ContainsKey (tag))
+			return weapons [tag];
+		else
+			return nullWeapon;
 	}
 }
