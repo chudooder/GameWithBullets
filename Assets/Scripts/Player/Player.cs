@@ -7,6 +7,5 @@ public class Player : MonoBehaviour {
 	public Color color;
 
 	void Start(){
-		GetComponent<MeshRenderer>().materials = new Material[]{baseMaterial};
 	}
 }
