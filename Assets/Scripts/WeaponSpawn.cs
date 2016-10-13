@@ -22,7 +22,7 @@ public class WeaponSpawn : MonoBehaviour
 	private void CreateDrop(){
 		WeaponDrop drop = Instantiate (dropPrefab);
 		drop.transform.SetParent (transform, false);
-		drop.weapon = weapons[Random.Range(0, weapons.Length - 1)];
+		drop.weapon = weapons[Random.Range(0, weapons.Length)];
 	}
 }
 
