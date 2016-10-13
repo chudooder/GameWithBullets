@@ -265,9 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e606225bc6775dc46a5712c95053dcf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerId: 1
-  baseMaterial: {fileID: 2100000, guid: 48bd9b3f3ceaa4e4d8abd37e46105050, type: 2}
-  color: {r: 0, g: 1, b: 0, a: 1}
+  playerId: 0
+  baseMaterial: {fileID: 2100000, guid: b9118ef30d72f304caedcd409b4dee29, type: 2}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &114000014103326794
 MonoBehaviour:
   m_ObjectHideFlags: 1
